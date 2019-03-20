@@ -1,0 +1,17 @@
+.todo-item {
+    border: 1px solid black;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.todo-item-completed {
+    border: 1px solid black;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: line-through;
+    background-color: gray;
+}
