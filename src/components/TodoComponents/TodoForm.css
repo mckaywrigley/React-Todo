@@ -1,20 +1,90 @@
-form {
+.todoForm {
+    width: 100%;
     text-align: center;
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.addGroup {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
-form input {
-    width: 30%;
-    margin: 0 10px;
+.addGroup input {
+    width: 73.7%;
     border: 1px solid black;
-    padding: 10px;
+    padding: 2px 1px 2px 5px;
+    border-radius: 5px;
 }
 
-form button {
-    margin: 0 10px;
+.addGroup .add {
+    width: 23%;
     border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    background-color: white;
+    padding: 5px 0;
     cursor: pointer;
-    padding: 10px;
-    width: 30%;
+}
+
+.addGroup .add:hover {
+    width: 23%;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.addGroup .add p {
+    width: 90%;
+    margin: 0;
+    padding-left: 5px;
+}
+
+.addGroup .add i {
+    width: 10%;
+    padding: 0 10px 0 5px;
+}
+
+.clear {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-top: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.clear:hover {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: #CB356B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.clear p {
+    text-align: center;
+}
+
+.clear i {
+    margin-left: 10px;
 }

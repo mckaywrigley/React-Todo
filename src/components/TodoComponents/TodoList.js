@@ -2,10 +2,11 @@
 // feel free to change this component.js into TodoList.js
 import React from 'react';
 import Todo from './Todo.js';
+import './TodoList.css';
 
 const TodoList = props => {
     return (
-        <div>
+        <div className="todoList">
             {
                 props.todoList.map(todo => {
                     return <Todo 
