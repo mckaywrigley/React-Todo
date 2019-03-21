@@ -28,18 +28,15 @@ class App extends React.Component {
     };
   }
 
-  inputChange = event => {
-    this.setState(
-      {
-      inputText: event.target.value
-      }
-    );
+  inputChange = e => {
+    this.setState({
+      inputText: e.target.value
+    });
   };
 
-  addTodo = event => {
-    event.preventDefault();
-    this.setState(
-      {
+  addTodo = e => {
+    e.preventDefault();
+    this.setState({
         todos: [
           ...this.state.todos, {
             task: this.state.inputText,
@@ -48,8 +45,7 @@ class App extends React.Component {
           }
         ],
         inputText: ''
-      }
-    );
+    });
   };
 
   toggleCompleted = id => {
@@ -63,8 +59,8 @@ class App extends React.Component {
     });
   }
 
-  clearCompleted = event => {
-    event.preventDefault();
+  clearCompleted = e => {
+    e.preventDefault();
     this.setState({
       todos: this.state.todos.filter(todo => !todo.completed)
     });
