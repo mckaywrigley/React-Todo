@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TodoList from './components/TodoComponents/TodoList.js';
 import TodoForm from './components/TodoComponents/TodoForm.js';
+import SearchBar from './components/TodoComponents/SearchBar';
 
 const todoData = [
   {
@@ -23,14 +24,36 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todoData,
-      inputText: ''
+      todos: [],
+      inputText: '',
+      searchText: '',
+      filteredTodos: []
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      todos: todoData,
+      filteredTodos: todoData
+    });
+  }
+
+  searchHandler = e => {
+    this.inputChange(e);
+    const filteredTodos = this.state.todos.filter(todo => {
+      if (todo.task.toLowerCase().includes(e.target.value.toLowerCase())) {
+        return todo;
+      }
+    });
+    console.log(e.target.value);
+    this.setState({
+      filteredTodos: filteredTodos
+    });
   }
 
   inputChange = e => {
     this.setState({
-      inputText: e.target.value
+      [e.target.name]: e.target.value
     });
   };
 
@@ -70,9 +93,15 @@ class App extends React.Component {
     return (
       <div className="todo-app">
         <h1>Todo App</h1>
+        <SearchBar 
+          searchText={this.state.searchText}
+          handleChange= {this.inputChange}
+          searchHandler={this.searchHandler}
+        />
         <TodoList 
           todoList = {this.state.todos}
           toggleCompleted = {this.toggleCompleted}
+          filteredTodos = {this.state.filteredTodos}
         />
         <TodoForm 
           addTodo = {this.addTodo}
