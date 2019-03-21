@@ -39,15 +39,19 @@ class App extends React.Component {
   }
 
   searchHandler = e => {
+    e.preventDefault();
     this.inputChange(e);
     const filteredTodos = this.state.todos.filter(todo => {
       if (todo.task.toLowerCase().includes(e.target.value.toLowerCase())) {
         return todo;
       }
+        return null;
     });
     this.setState({
       filteredTodos: filteredTodos
     });
+    console.log(this.state.filteredTodos);
+    console.log(this.state.todos);
   }
 
   inputChange = e => {
@@ -101,6 +105,7 @@ class App extends React.Component {
           todoList = {this.state.todos}
           toggleCompleted = {this.toggleCompleted}
           filteredTodos = {this.state.filteredTodos}
+          searchText = {this.state.searchText}
         />
         <TodoForm 
           addTodo = {this.addTodo}

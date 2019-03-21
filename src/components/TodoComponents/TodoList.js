@@ -7,15 +7,22 @@ import './TodoList.css';
 const TodoList = props => {
     return (
         <div className="todoList">
-            {
-                props.filteredTodos.map(todo => {
-                    return <Todo 
+        {props.searchText === ''
+        ?    props.todoList.map(todo => {
+                return <Todo 
                             todo = {todo}
                             key = {todo.id}
                             toggleCompleted = {props.toggleCompleted}
                         />;
-                })
-            }
+            })
+        :        props.filteredTodos.map(todo => {
+                return <Todo 
+                            todo = {todo}
+                            key = {todo.id}
+                            toggleCompleted = {props.toggleCompleted}
+                        />;
+            })
+        }
         </div>
     );
 }
