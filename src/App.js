@@ -50,8 +50,6 @@ class App extends React.Component {
     this.setState({
       filteredTodos: filteredTodos
     });
-    console.log(this.state.filteredTodos);
-    console.log(this.state.todos);
   }
 
   inputChange = e => {

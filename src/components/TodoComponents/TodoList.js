@@ -8,18 +8,18 @@ const TodoList = props => {
     return (
         <div className="todoList">
         {props.searchText === ''
-        ?    props.todoList.map(todo => {
+        ?   props.todoList.map(todo => {
                 return <Todo 
                             todo = {todo}
                             key = {todo.id}
                             toggleCompleted = {props.toggleCompleted}
                         />;
             })
-        :        props.filteredTodos.map(todo => {
+    :        props.filteredTodos.map(todo => {
                 return <Todo 
-                            todo = {todo}
-                            key = {todo.id}
-                            toggleCompleted = {props.toggleCompleted}
+                        todo = {todo}
+                        key = {todo.id}
+                        toggleCompleted = {props.toggleCompleted}
                         />;
             })
         }
