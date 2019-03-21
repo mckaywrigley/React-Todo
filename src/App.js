@@ -45,7 +45,6 @@ class App extends React.Component {
         return todo;
       }
     });
-    console.log(e.target.value);
     this.setState({
       filteredTodos: filteredTodos
     });
