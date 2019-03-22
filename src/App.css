@@ -1,0 +1,18 @@
+.todo-app {
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 3rem;
+}
